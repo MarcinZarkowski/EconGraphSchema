@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package econgraph.v1;
+
+option go_package = "github.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1";
+
+message MacroRevenueEdge {
+    double sector_market_share = 1;
+    double country_market_share = 2;
+    double company_revenue_weight = 3;
+
+    double allocated_revenue = 4;
+    string currency = 5;
+    int64 scale = 6;
+
+    string sector_code = 7;
+    string country_iso = 8;
+    uint32 company_id = 9;
+}
+
+message MacroRevenueEdgesFile {
+    string version = 1;
+    int64 updated_at = 2;
+    repeated MacroRevenueEdge edges = 3;
+}

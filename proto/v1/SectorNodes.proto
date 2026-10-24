@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package econgraph.v1;
+
+option go_package = "github.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1";
+
+// SectorNode represents an industry classification from either BEA or OECD ICIO 
+message SectorNode {
+    string code = 1;
+    string name = 2; 
+    string taxonomy = 3;
+    string agency = 4;
+    string description = 5;
+}
+
+message SectorNodesFile {
+    string version = 1;
+    int64 updated_at = 2;
+    repeated SectorNode nodes = 3;
+}

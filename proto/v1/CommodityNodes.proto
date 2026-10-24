@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package econgraph.v1;
+
+option go_package = "github.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1";
+
+message CommodityNode {
+    string commodity_code = 1;
+    string name = 2;
+    string bea_sector_code = 3;
+    string icio_sector_code = 4;
+}
+
+message CommodityNodesFile {
+    string version = 1;
+    int64 updated_at = 2;
+    repeated CommodityNode nodes = 3;
+}
