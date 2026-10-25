@@ -4,6 +4,8 @@ package econgraph.v1;
 
 option go_package = "github.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1";
 
+import "SectorNodes.proto";
+
 message MacroRevenueEdge {
     float sector_market_share = 1;
     float country_market_share = 2;
@@ -14,8 +16,9 @@ message MacroRevenueEdge {
     int64 scale = 6;
 
     string sector_code = 7;
-    string country_iso = 8;
-    uint32 company_id = 9;
+    SectorTaxonomy sector_taxonomy = 8;
+    string country_iso = 9;
+    uint32 company_id = 10;
 }
 
 message MacroRevenueEdgesFile {

@@ -4,6 +4,8 @@ package econgraph.v1;
 
 option go_package = "github.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1";
 
+import "SectorNodes.proto";
+
 enum SupplyKind {
     COMMODITY = 0;
     COMPANY = 1;
@@ -25,6 +27,8 @@ message SupplyChainEdge {
     uint32 from_company_id = 7;
 
     string from_sector_code = 8;
+
+    SectorTaxonomy from_sector_taxonomy = 9;
 }
 
 message SupplyChainEdgesFile {

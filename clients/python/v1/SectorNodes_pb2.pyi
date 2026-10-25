@@ -7,12 +7,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class SectorTaxonomyKind(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+class SectorTaxonomy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
-    ICIO: _ClassVar[SectorTaxonomyKind]
-    BEA: _ClassVar[SectorTaxonomyKind]
-ICIO: SectorTaxonomyKind
-BEA: SectorTaxonomyKind
+    ICIO: _ClassVar[SectorTaxonomy]
+    BEA: _ClassVar[SectorTaxonomy]
+ICIO: SectorTaxonomy
+BEA: SectorTaxonomy
 
 class SectorNode(_message.Message):
     __slots__ = ("code", "name", "taxonomy", "agency", "description")
@@ -23,10 +23,10 @@ class SectorNode(_message.Message):
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     code: str
     name: str
-    taxonomy: SectorTaxonomyKind
+    taxonomy: SectorTaxonomy
     agency: str
     description: str
-    def __init__(self, code: _Optional[str] = ..., name: _Optional[str] = ..., taxonomy: _Optional[_Union[SectorTaxonomyKind, str]] = ..., agency: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, code: _Optional[str] = ..., name: _Optional[str] = ..., taxonomy: _Optional[_Union[SectorTaxonomy, str]] = ..., agency: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class SectorNodesFile(_message.Message):
     __slots__ = ("version", "updated_at", "nodes")

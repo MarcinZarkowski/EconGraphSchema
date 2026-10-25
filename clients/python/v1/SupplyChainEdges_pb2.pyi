@@ -1,3 +1,4 @@
+import SectorNodes_pb2 as _SectorNodes_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -17,7 +18,7 @@ COMPANY: SupplyKind
 SECTOR: SupplyKind
 
 class SupplyChainEdge(_message.Message):
-    __slots__ = ("supplier_revenue_weight", "supplied_dependency_weight", "to_company_id", "from_country_iso", "supply_kind", "commodity_code", "from_company_id", "from_sector_code")
+    __slots__ = ("supplier_revenue_weight", "supplied_dependency_weight", "to_company_id", "from_country_iso", "supply_kind", "commodity_code", "from_company_id", "from_sector_code", "from_sector_taxonomy")
     SUPPLIER_REVENUE_WEIGHT_FIELD_NUMBER: _ClassVar[int]
     SUPPLIED_DEPENDENCY_WEIGHT_FIELD_NUMBER: _ClassVar[int]
     TO_COMPANY_ID_FIELD_NUMBER: _ClassVar[int]
@@ -26,6 +27,7 @@ class SupplyChainEdge(_message.Message):
     COMMODITY_CODE_FIELD_NUMBER: _ClassVar[int]
     FROM_COMPANY_ID_FIELD_NUMBER: _ClassVar[int]
     FROM_SECTOR_CODE_FIELD_NUMBER: _ClassVar[int]
+    FROM_SECTOR_TAXONOMY_FIELD_NUMBER: _ClassVar[int]
     supplier_revenue_weight: float
     supplied_dependency_weight: float
     to_company_id: int
@@ -34,7 +36,8 @@ class SupplyChainEdge(_message.Message):
     commodity_code: str
     from_company_id: int
     from_sector_code: str
-    def __init__(self, supplier_revenue_weight: _Optional[float] = ..., supplied_dependency_weight: _Optional[float] = ..., to_company_id: _Optional[int] = ..., from_country_iso: _Optional[str] = ..., supply_kind: _Optional[_Union[SupplyKind, str]] = ..., commodity_code: _Optional[str] = ..., from_company_id: _Optional[int] = ..., from_sector_code: _Optional[str] = ...) -> None: ...
+    from_sector_taxonomy: _SectorNodes_pb2.SectorTaxonomy
+    def __init__(self, supplier_revenue_weight: _Optional[float] = ..., supplied_dependency_weight: _Optional[float] = ..., to_company_id: _Optional[int] = ..., from_country_iso: _Optional[str] = ..., supply_kind: _Optional[_Union[SupplyKind, str]] = ..., commodity_code: _Optional[str] = ..., from_company_id: _Optional[int] = ..., from_sector_code: _Optional[str] = ..., from_sector_taxonomy: _Optional[_Union[_SectorNodes_pb2.SectorTaxonomy, str]] = ...) -> None: ...
 
 class SupplyChainEdgesFile(_message.Message):
     __slots__ = ("version", "updated_at", "edges")

@@ -80,6 +80,7 @@ type SupplyChainEdge struct {
 	CommodityCode            string                 `protobuf:"bytes,6,opt,name=commodity_code,json=commodityCode,proto3" json:"commodity_code,omitempty"`
 	FromCompanyId            uint32                 `protobuf:"varint,7,opt,name=from_company_id,json=fromCompanyId,proto3" json:"from_company_id,omitempty"`
 	FromSectorCode           string                 `protobuf:"bytes,8,opt,name=from_sector_code,json=fromSectorCode,proto3" json:"from_sector_code,omitempty"`
+	FromSectorTaxonomy       SectorTaxonomy         `protobuf:"varint,9,opt,name=from_sector_taxonomy,json=fromSectorTaxonomy,proto3,enum=econgraph.v1.SectorTaxonomy" json:"from_sector_taxonomy,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -170,6 +171,13 @@ func (x *SupplyChainEdge) GetFromSectorCode() string {
 	return ""
 }
 
+func (x *SupplyChainEdge) GetFromSectorTaxonomy() SectorTaxonomy {
+	if x != nil {
+		return x.FromSectorTaxonomy
+	}
+	return SectorTaxonomy_ICIO
+}
+
 type SupplyChainEdgesFile struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Version       string                 `protobuf:"bytes,1,opt,name=version,proto3" json:"version,omitempty"`
@@ -234,7 +242,7 @@ var File_SupplyChainEdges_proto protoreflect.FileDescriptor
 
 const file_SupplyChainEdges_proto_rawDesc = "" +
 	"\n" +
-	"\x16SupplyChainEdges.proto\x12\fecongraph.v1\"\x89\x03\n" +
+	"\x16SupplyChainEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\xd9\x03\n" +
 	"\x0fSupplyChainEdge\x126\n" +
 	"\x17supplier_revenue_weight\x18\x01 \x01(\x02R\x15supplierRevenueWeight\x12<\n" +
 	"\x1asupplied_dependency_weight\x18\x02 \x01(\x02R\x18suppliedDependencyWeight\x12\"\n" +
@@ -244,7 +252,8 @@ const file_SupplyChainEdges_proto_rawDesc = "" +
 	"supplyKind\x12%\n" +
 	"\x0ecommodity_code\x18\x06 \x01(\tR\rcommodityCode\x12&\n" +
 	"\x0ffrom_company_id\x18\a \x01(\rR\rfromCompanyId\x12(\n" +
-	"\x10from_sector_code\x18\b \x01(\tR\x0efromSectorCode\"\x84\x01\n" +
+	"\x10from_sector_code\x18\b \x01(\tR\x0efromSectorCode\x12N\n" +
+	"\x14from_sector_taxonomy\x18\t \x01(\x0e2\x1c.econgraph.v1.SectorTaxonomyR\x12fromSectorTaxonomy\"\x84\x01\n" +
 	"\x14SupplyChainEdgesFile\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1d\n" +
 	"\n" +
@@ -275,15 +284,17 @@ var file_SupplyChainEdges_proto_goTypes = []any{
 	(SupplyKind)(0),              // 0: econgraph.v1.SupplyKind
 	(*SupplyChainEdge)(nil),      // 1: econgraph.v1.SupplyChainEdge
 	(*SupplyChainEdgesFile)(nil), // 2: econgraph.v1.SupplyChainEdgesFile
+	(SectorTaxonomy)(0),          // 3: econgraph.v1.SectorTaxonomy
 }
 var file_SupplyChainEdges_proto_depIdxs = []int32{
 	0, // 0: econgraph.v1.SupplyChainEdge.supply_kind:type_name -> econgraph.v1.SupplyKind
-	1, // 1: econgraph.v1.SupplyChainEdgesFile.edges:type_name -> econgraph.v1.SupplyChainEdge
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	3, // 1: econgraph.v1.SupplyChainEdge.from_sector_taxonomy:type_name -> econgraph.v1.SectorTaxonomy
+	1, // 2: econgraph.v1.SupplyChainEdgesFile.edges:type_name -> econgraph.v1.SupplyChainEdge
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_SupplyChainEdges_proto_init() }
@@ -291,6 +302,7 @@ func file_SupplyChainEdges_proto_init() {
 	if File_SupplyChainEdges_proto != nil {
 		return
 	}
+	file_SectorNodes_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

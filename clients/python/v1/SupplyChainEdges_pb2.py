@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+import SectorNodes_pb2 as SectorNodes__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16SupplyChainEdges.proto\x12\x0c\x65\x63ongraph.v1\"\x81\x02\n\x0fSupplyChainEdge\x12\x1f\n\x17supplier_revenue_weight\x18\x01 \x01(\x02\x12\"\n\x1asupplied_dependency_weight\x18\x02 \x01(\x02\x12\x15\n\rto_company_id\x18\x03 \x01(\r\x12\x18\n\x10\x66rom_country_iso\x18\x04 \x01(\t\x12-\n\x0bsupply_kind\x18\x05 \x01(\x0e\x32\x18.econgraph.v1.SupplyKind\x12\x16\n\x0e\x63ommodity_code\x18\x06 \x01(\t\x12\x17\n\x0f\x66rom_company_id\x18\x07 \x01(\r\x12\x18\n\x10\x66rom_sector_code\x18\x08 \x01(\t\"i\n\x14SupplyChainEdgesFile\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x12\n\nupdated_at\x18\x02 \x01(\x03\x12,\n\x05\x65\x64ges\x18\x03 \x03(\x0b\x32\x1d.econgraph.v1.SupplyChainEdge*4\n\nSupplyKind\x12\r\n\tCOMMODITY\x10\x00\x12\x0b\n\x07\x43OMPANY\x10\x01\x12\n\n\x06SECTOR\x10\x02\x42\x46ZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16SupplyChainEdges.proto\x12\x0c\x65\x63ongraph.v1\x1a\x11SectorNodes.proto\"\xbd\x02\n\x0fSupplyChainEdge\x12\x1f\n\x17supplier_revenue_weight\x18\x01 \x01(\x02\x12\"\n\x1asupplied_dependency_weight\x18\x02 \x01(\x02\x12\x15\n\rto_company_id\x18\x03 \x01(\r\x12\x18\n\x10\x66rom_country_iso\x18\x04 \x01(\t\x12-\n\x0bsupply_kind\x18\x05 \x01(\x0e\x32\x18.econgraph.v1.SupplyKind\x12\x16\n\x0e\x63ommodity_code\x18\x06 \x01(\t\x12\x17\n\x0f\x66rom_company_id\x18\x07 \x01(\r\x12\x18\n\x10\x66rom_sector_code\x18\x08 \x01(\t\x12:\n\x14\x66rom_sector_taxonomy\x18\t \x01(\x0e\x32\x1c.econgraph.v1.SectorTaxonomy\"i\n\x14SupplyChainEdgesFile\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x12\n\nupdated_at\x18\x02 \x01(\x03\x12,\n\x05\x65\x64ges\x18\x03 \x03(\x0b\x32\x1d.econgraph.v1.SupplyChainEdge*4\n\nSupplyKind\x12\r\n\tCOMMODITY\x10\x00\x12\x0b\n\x07\x43OMPANY\x10\x01\x12\n\n\x06SECTOR\x10\x02\x42\x46ZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'SupplyChainEdges_pb2', _glo
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'ZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1'
-  _globals['_SUPPLYKIND']._serialized_start=407
-  _globals['_SUPPLYKIND']._serialized_end=459
-  _globals['_SUPPLYCHAINEDGE']._serialized_start=41
-  _globals['_SUPPLYCHAINEDGE']._serialized_end=298
-  _globals['_SUPPLYCHAINEDGESFILE']._serialized_start=300
-  _globals['_SUPPLYCHAINEDGESFILE']._serialized_end=405
+  _globals['_SUPPLYKIND']._serialized_start=486
+  _globals['_SUPPLYKIND']._serialized_end=538
+  _globals['_SUPPLYCHAINEDGE']._serialized_start=60
+  _globals['_SUPPLYCHAINEDGE']._serialized_end=377
+  _globals['_SUPPLYCHAINEDGESFILE']._serialized_start=379
+  _globals['_SUPPLYCHAINEDGESFILE']._serialized_end=484
 # @@protoc_insertion_point(module_scope)

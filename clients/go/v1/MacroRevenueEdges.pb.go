@@ -30,8 +30,9 @@ type MacroRevenueEdge struct {
 	Currency             string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`
 	Scale                int64                  `protobuf:"varint,6,opt,name=scale,proto3" json:"scale,omitempty"`
 	SectorCode           string                 `protobuf:"bytes,7,opt,name=sector_code,json=sectorCode,proto3" json:"sector_code,omitempty"`
-	CountryIso           string                 `protobuf:"bytes,8,opt,name=country_iso,json=countryIso,proto3" json:"country_iso,omitempty"`
-	CompanyId            uint32                 `protobuf:"varint,9,opt,name=company_id,json=companyId,proto3" json:"company_id,omitempty"`
+	SectorTaxonomy       SectorTaxonomy         `protobuf:"varint,8,opt,name=sector_taxonomy,json=sectorTaxonomy,proto3,enum=econgraph.v1.SectorTaxonomy" json:"sector_taxonomy,omitempty"`
+	CountryIso           string                 `protobuf:"bytes,9,opt,name=country_iso,json=countryIso,proto3" json:"country_iso,omitempty"`
+	CompanyId            uint32                 `protobuf:"varint,10,opt,name=company_id,json=companyId,proto3" json:"company_id,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -115,6 +116,13 @@ func (x *MacroRevenueEdge) GetSectorCode() string {
 	return ""
 }
 
+func (x *MacroRevenueEdge) GetSectorTaxonomy() SectorTaxonomy {
+	if x != nil {
+		return x.SectorTaxonomy
+	}
+	return SectorTaxonomy_ICIO
+}
+
 func (x *MacroRevenueEdge) GetCountryIso() string {
 	if x != nil {
 		return x.CountryIso
@@ -193,7 +201,7 @@ var File_MacroRevenueEdges_proto protoreflect.FileDescriptor
 
 const file_MacroRevenueEdges_proto_rawDesc = "" +
 	"\n" +
-	"\x17MacroRevenueEdges.proto\x12\fecongraph.v1\"\xea\x02\n" +
+	"\x17MacroRevenueEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\xb1\x03\n" +
 	"\x10MacroRevenueEdge\x12.\n" +
 	"\x13sector_market_share\x18\x01 \x01(\x02R\x11sectorMarketShare\x120\n" +
 	"\x14country_market_share\x18\x02 \x01(\x02R\x12countryMarketShare\x124\n" +
@@ -202,11 +210,13 @@ const file_MacroRevenueEdges_proto_rawDesc = "" +
 	"\bcurrency\x18\x05 \x01(\tR\bcurrency\x12\x14\n" +
 	"\x05scale\x18\x06 \x01(\x03R\x05scale\x12\x1f\n" +
 	"\vsector_code\x18\a \x01(\tR\n" +
-	"sectorCode\x12\x1f\n" +
-	"\vcountry_iso\x18\b \x01(\tR\n" +
+	"sectorCode\x12E\n" +
+	"\x0fsector_taxonomy\x18\b \x01(\x0e2\x1c.econgraph.v1.SectorTaxonomyR\x0esectorTaxonomy\x12\x1f\n" +
+	"\vcountry_iso\x18\t \x01(\tR\n" +
 	"countryIso\x12\x1d\n" +
 	"\n" +
-	"company_id\x18\t \x01(\rR\tcompanyId\"\x86\x01\n" +
+	"company_id\x18\n" +
+	" \x01(\rR\tcompanyId\"\x86\x01\n" +
 	"\x15MacroRevenueEdgesFile\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1d\n" +
 	"\n" +
@@ -229,14 +239,16 @@ var file_MacroRevenueEdges_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_MacroRevenueEdges_proto_goTypes = []any{
 	(*MacroRevenueEdge)(nil),      // 0: econgraph.v1.MacroRevenueEdge
 	(*MacroRevenueEdgesFile)(nil), // 1: econgraph.v1.MacroRevenueEdgesFile
+	(SectorTaxonomy)(0),           // 2: econgraph.v1.SectorTaxonomy
 }
 var file_MacroRevenueEdges_proto_depIdxs = []int32{
-	0, // 0: econgraph.v1.MacroRevenueEdgesFile.edges:type_name -> econgraph.v1.MacroRevenueEdge
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 0: econgraph.v1.MacroRevenueEdge.sector_taxonomy:type_name -> econgraph.v1.SectorTaxonomy
+	0, // 1: econgraph.v1.MacroRevenueEdgesFile.edges:type_name -> econgraph.v1.MacroRevenueEdge
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_MacroRevenueEdges_proto_init() }
@@ -244,6 +256,7 @@ func file_MacroRevenueEdges_proto_init() {
 	if File_MacroRevenueEdges_proto != nil {
 		return
 	}
+	file_SectorNodes_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -21,49 +21,49 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type SectorTaxonomyKind int32
+type SectorTaxonomy int32
 
 const (
-	SectorTaxonomyKind_ICIO SectorTaxonomyKind = 0
-	SectorTaxonomyKind_BEA  SectorTaxonomyKind = 1
+	SectorTaxonomy_ICIO SectorTaxonomy = 0
+	SectorTaxonomy_BEA  SectorTaxonomy = 1
 )
 
-// Enum value maps for SectorTaxonomyKind.
+// Enum value maps for SectorTaxonomy.
 var (
-	SectorTaxonomyKind_name = map[int32]string{
+	SectorTaxonomy_name = map[int32]string{
 		0: "ICIO",
 		1: "BEA",
 	}
-	SectorTaxonomyKind_value = map[string]int32{
+	SectorTaxonomy_value = map[string]int32{
 		"ICIO": 0,
 		"BEA":  1,
 	}
 )
 
-func (x SectorTaxonomyKind) Enum() *SectorTaxonomyKind {
-	p := new(SectorTaxonomyKind)
+func (x SectorTaxonomy) Enum() *SectorTaxonomy {
+	p := new(SectorTaxonomy)
 	*p = x
 	return p
 }
 
-func (x SectorTaxonomyKind) String() string {
+func (x SectorTaxonomy) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (SectorTaxonomyKind) Descriptor() protoreflect.EnumDescriptor {
+func (SectorTaxonomy) Descriptor() protoreflect.EnumDescriptor {
 	return file_SectorNodes_proto_enumTypes[0].Descriptor()
 }
 
-func (SectorTaxonomyKind) Type() protoreflect.EnumType {
+func (SectorTaxonomy) Type() protoreflect.EnumType {
 	return &file_SectorNodes_proto_enumTypes[0]
 }
 
-func (x SectorTaxonomyKind) Number() protoreflect.EnumNumber {
+func (x SectorTaxonomy) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use SectorTaxonomyKind.Descriptor instead.
-func (SectorTaxonomyKind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use SectorTaxonomy.Descriptor instead.
+func (SectorTaxonomy) EnumDescriptor() ([]byte, []int) {
 	return file_SectorNodes_proto_rawDescGZIP(), []int{0}
 }
 
@@ -72,7 +72,7 @@ type SectorNode struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Taxonomy      SectorTaxonomyKind     `protobuf:"varint,3,opt,name=taxonomy,proto3,enum=econgraph.v1.SectorTaxonomyKind" json:"taxonomy,omitempty"`
+	Taxonomy      SectorTaxonomy         `protobuf:"varint,3,opt,name=taxonomy,proto3,enum=econgraph.v1.SectorTaxonomy" json:"taxonomy,omitempty"`
 	Agency        string                 `protobuf:"bytes,4,opt,name=agency,proto3" json:"agency,omitempty"`
 	Description   string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -123,11 +123,11 @@ func (x *SectorNode) GetName() string {
 	return ""
 }
 
-func (x *SectorNode) GetTaxonomy() SectorTaxonomyKind {
+func (x *SectorNode) GetTaxonomy() SectorTaxonomy {
 	if x != nil {
 		return x.Taxonomy
 	}
-	return SectorTaxonomyKind_ICIO
+	return SectorTaxonomy_ICIO
 }
 
 func (x *SectorNode) GetAgency() string {
@@ -208,20 +208,20 @@ var File_SectorNodes_proto protoreflect.FileDescriptor
 
 const file_SectorNodes_proto_rawDesc = "" +
 	"\n" +
-	"\x11SectorNodes.proto\x12\fecongraph.v1\"\xac\x01\n" +
+	"\x11SectorNodes.proto\x12\fecongraph.v1\"\xa8\x01\n" +
 	"\n" +
 	"SectorNode\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\tR\x04code\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12<\n" +
-	"\btaxonomy\x18\x03 \x01(\x0e2 .econgraph.v1.SectorTaxonomyKindR\btaxonomy\x12\x16\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x128\n" +
+	"\btaxonomy\x18\x03 \x01(\x0e2\x1c.econgraph.v1.SectorTaxonomyR\btaxonomy\x12\x16\n" +
 	"\x06agency\x18\x04 \x01(\tR\x06agency\x12 \n" +
 	"\vdescription\x18\x05 \x01(\tR\vdescription\"z\n" +
 	"\x0fSectorNodesFile\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\x02 \x01(\x03R\tupdatedAt\x12.\n" +
-	"\x05nodes\x18\x03 \x03(\v2\x18.econgraph.v1.SectorNodeR\x05nodes*'\n" +
-	"\x12SectorTaxonomyKind\x12\b\n" +
+	"\x05nodes\x18\x03 \x03(\v2\x18.econgraph.v1.SectorNodeR\x05nodes*#\n" +
+	"\x0eSectorTaxonomy\x12\b\n" +
 	"\x04ICIO\x10\x00\x12\a\n" +
 	"\x03BEA\x10\x01BFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3"
 
@@ -240,12 +240,12 @@ func file_SectorNodes_proto_rawDescGZIP() []byte {
 var file_SectorNodes_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_SectorNodes_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_SectorNodes_proto_goTypes = []any{
-	(SectorTaxonomyKind)(0), // 0: econgraph.v1.SectorTaxonomyKind
+	(SectorTaxonomy)(0),     // 0: econgraph.v1.SectorTaxonomy
 	(*SectorNode)(nil),      // 1: econgraph.v1.SectorNode
 	(*SectorNodesFile)(nil), // 2: econgraph.v1.SectorNodesFile
 }
 var file_SectorNodes_proto_depIdxs = []int32{
-	0, // 0: econgraph.v1.SectorNode.taxonomy:type_name -> econgraph.v1.SectorTaxonomyKind
+	0, // 0: econgraph.v1.SectorNode.taxonomy:type_name -> econgraph.v1.SectorTaxonomy
 	1, // 1: econgraph.v1.SectorNodesFile.nodes:type_name -> econgraph.v1.SectorNode
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
