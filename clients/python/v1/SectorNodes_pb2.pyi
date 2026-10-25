@@ -1,10 +1,18 @@
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class SectorTaxonomyKind(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    ICIO: _ClassVar[SectorTaxonomyKind]
+    BEA: _ClassVar[SectorTaxonomyKind]
+ICIO: SectorTaxonomyKind
+BEA: SectorTaxonomyKind
 
 class SectorNode(_message.Message):
     __slots__ = ("code", "name", "taxonomy", "agency", "description")
@@ -15,10 +23,10 @@ class SectorNode(_message.Message):
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     code: str
     name: str
-    taxonomy: str
+    taxonomy: SectorTaxonomyKind
     agency: str
     description: str
-    def __init__(self, code: _Optional[str] = ..., name: _Optional[str] = ..., taxonomy: _Optional[str] = ..., agency: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, code: _Optional[str] = ..., name: _Optional[str] = ..., taxonomy: _Optional[_Union[SectorTaxonomyKind, str]] = ..., agency: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class SectorNodesFile(_message.Message):
     __slots__ = ("version", "updated_at", "nodes")

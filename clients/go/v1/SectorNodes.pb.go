@@ -21,12 +21,58 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type SectorTaxonomyKind int32
+
+const (
+	SectorTaxonomyKind_ICIO SectorTaxonomyKind = 0
+	SectorTaxonomyKind_BEA  SectorTaxonomyKind = 1
+)
+
+// Enum value maps for SectorTaxonomyKind.
+var (
+	SectorTaxonomyKind_name = map[int32]string{
+		0: "ICIO",
+		1: "BEA",
+	}
+	SectorTaxonomyKind_value = map[string]int32{
+		"ICIO": 0,
+		"BEA":  1,
+	}
+)
+
+func (x SectorTaxonomyKind) Enum() *SectorTaxonomyKind {
+	p := new(SectorTaxonomyKind)
+	*p = x
+	return p
+}
+
+func (x SectorTaxonomyKind) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SectorTaxonomyKind) Descriptor() protoreflect.EnumDescriptor {
+	return file_SectorNodes_proto_enumTypes[0].Descriptor()
+}
+
+func (SectorTaxonomyKind) Type() protoreflect.EnumType {
+	return &file_SectorNodes_proto_enumTypes[0]
+}
+
+func (x SectorTaxonomyKind) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SectorTaxonomyKind.Descriptor instead.
+func (SectorTaxonomyKind) EnumDescriptor() ([]byte, []int) {
+	return file_SectorNodes_proto_rawDescGZIP(), []int{0}
+}
+
 // SectorNode represents an industry classification from either BEA or OECD ICIO
 type SectorNode struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Taxonomy      string                 `protobuf:"bytes,3,opt,name=taxonomy,proto3" json:"taxonomy,omitempty"`
+	Taxonomy      SectorTaxonomyKind     `protobuf:"varint,3,opt,name=taxonomy,proto3,enum=econgraph.v1.SectorTaxonomyKind" json:"taxonomy,omitempty"`
 	Agency        string                 `protobuf:"bytes,4,opt,name=agency,proto3" json:"agency,omitempty"`
 	Description   string                 `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -77,11 +123,11 @@ func (x *SectorNode) GetName() string {
 	return ""
 }
 
-func (x *SectorNode) GetTaxonomy() string {
+func (x *SectorNode) GetTaxonomy() SectorTaxonomyKind {
 	if x != nil {
 		return x.Taxonomy
 	}
-	return ""
+	return SectorTaxonomyKind_ICIO
 }
 
 func (x *SectorNode) GetAgency() string {
@@ -162,19 +208,22 @@ var File_SectorNodes_proto protoreflect.FileDescriptor
 
 const file_SectorNodes_proto_rawDesc = "" +
 	"\n" +
-	"\x11SectorNodes.proto\x12\fecongraph.v1\"\x8a\x01\n" +
+	"\x11SectorNodes.proto\x12\fecongraph.v1\"\xac\x01\n" +
 	"\n" +
 	"SectorNode\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\tR\x04code\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1a\n" +
-	"\btaxonomy\x18\x03 \x01(\tR\btaxonomy\x12\x16\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12<\n" +
+	"\btaxonomy\x18\x03 \x01(\x0e2 .econgraph.v1.SectorTaxonomyKindR\btaxonomy\x12\x16\n" +
 	"\x06agency\x18\x04 \x01(\tR\x06agency\x12 \n" +
 	"\vdescription\x18\x05 \x01(\tR\vdescription\"z\n" +
 	"\x0fSectorNodesFile\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\x02 \x01(\x03R\tupdatedAt\x12.\n" +
-	"\x05nodes\x18\x03 \x03(\v2\x18.econgraph.v1.SectorNodeR\x05nodesBFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3"
+	"\x05nodes\x18\x03 \x03(\v2\x18.econgraph.v1.SectorNodeR\x05nodes*'\n" +
+	"\x12SectorTaxonomyKind\x12\b\n" +
+	"\x04ICIO\x10\x00\x12\a\n" +
+	"\x03BEA\x10\x01BFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3"
 
 var (
 	file_SectorNodes_proto_rawDescOnce sync.Once
@@ -188,18 +237,21 @@ func file_SectorNodes_proto_rawDescGZIP() []byte {
 	return file_SectorNodes_proto_rawDescData
 }
 
+var file_SectorNodes_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_SectorNodes_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_SectorNodes_proto_goTypes = []any{
-	(*SectorNode)(nil),      // 0: econgraph.v1.SectorNode
-	(*SectorNodesFile)(nil), // 1: econgraph.v1.SectorNodesFile
+	(SectorTaxonomyKind)(0), // 0: econgraph.v1.SectorTaxonomyKind
+	(*SectorNode)(nil),      // 1: econgraph.v1.SectorNode
+	(*SectorNodesFile)(nil), // 2: econgraph.v1.SectorNodesFile
 }
 var file_SectorNodes_proto_depIdxs = []int32{
-	0, // 0: econgraph.v1.SectorNodesFile.nodes:type_name -> econgraph.v1.SectorNode
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 0: econgraph.v1.SectorNode.taxonomy:type_name -> econgraph.v1.SectorTaxonomyKind
+	1, // 1: econgraph.v1.SectorNodesFile.nodes:type_name -> econgraph.v1.SectorNode
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_SectorNodes_proto_init() }
@@ -212,13 +264,14 @@ func file_SectorNodes_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_SectorNodes_proto_rawDesc), len(file_SectorNodes_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_SectorNodes_proto_goTypes,
 		DependencyIndexes: file_SectorNodes_proto_depIdxs,
+		EnumInfos:         file_SectorNodes_proto_enumTypes,
 		MessageInfos:      file_SectorNodes_proto_msgTypes,
 	}.Build()
 	File_SectorNodes_proto = out.File

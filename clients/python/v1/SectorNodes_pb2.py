@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11SectorNodes.proto\x12\x0c\x65\x63ongraph.v1\"_\n\nSectorNode\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08taxonomy\x18\x03 \x01(\t\x12\x0e\n\x06\x61gency\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"_\n\x0fSectorNodesFile\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x12\n\nupdated_at\x18\x02 \x01(\x03\x12\'\n\x05nodes\x18\x03 \x03(\x0b\x32\x18.econgraph.v1.SectorNodeBFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11SectorNodes.proto\x12\x0c\x65\x63ongraph.v1\"\x81\x01\n\nSectorNode\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x32\n\x08taxonomy\x18\x03 \x01(\x0e\x32 .econgraph.v1.SectorTaxonomyKind\x12\x0e\n\x06\x61gency\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"_\n\x0fSectorNodesFile\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x12\n\nupdated_at\x18\x02 \x01(\x03\x12\'\n\x05nodes\x18\x03 \x03(\x0b\x32\x18.econgraph.v1.SectorNode*\'\n\x12SectorTaxonomyKind\x12\x08\n\x04ICIO\x10\x00\x12\x07\n\x03\x42\x45\x41\x10\x01\x42\x46ZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +32,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'SectorNodes_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'ZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1'
-  _globals['_SECTORNODE']._serialized_start=35
-  _globals['_SECTORNODE']._serialized_end=130
-  _globals['_SECTORNODESFILE']._serialized_start=132
-  _globals['_SECTORNODESFILE']._serialized_end=227
+  _globals['_SECTORTAXONOMYKIND']._serialized_start=264
+  _globals['_SECTORTAXONOMYKIND']._serialized_end=303
+  _globals['_SECTORNODE']._serialized_start=36
+  _globals['_SECTORNODE']._serialized_end=165
+  _globals['_SECTORNODESFILE']._serialized_start=167
+  _globals['_SECTORNODESFILE']._serialized_end=262
 # @@protoc_insertion_point(module_scope)
