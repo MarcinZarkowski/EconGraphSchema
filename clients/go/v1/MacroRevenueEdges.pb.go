@@ -26,7 +26,7 @@ type MacroRevenueEdge struct {
 	SectorMarketShare    float32                `protobuf:"fixed32,1,opt,name=sector_market_share,json=sectorMarketShare,proto3" json:"sector_market_share,omitempty"`
 	CountryMarketShare   float32                `protobuf:"fixed32,2,opt,name=country_market_share,json=countryMarketShare,proto3" json:"country_market_share,omitempty"`
 	CompanyRevenueWeight float32                `protobuf:"fixed32,3,opt,name=company_revenue_weight,json=companyRevenueWeight,proto3" json:"company_revenue_weight,omitempty"`
-	AllocatedRevenue     float64                `protobuf:"fixed64,4,opt,name=allocated_revenue,json=allocatedRevenue,proto3" json:"allocated_revenue,omitempty"`
+	Revenue              float64                `protobuf:"fixed64,4,opt,name=revenue,proto3" json:"revenue,omitempty"`
 	Currency             string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`
 	Scale                int64                  `protobuf:"varint,6,opt,name=scale,proto3" json:"scale,omitempty"`
 	SectorCode           string                 `protobuf:"bytes,7,opt,name=sector_code,json=sectorCode,proto3" json:"sector_code,omitempty"`
@@ -88,9 +88,9 @@ func (x *MacroRevenueEdge) GetCompanyRevenueWeight() float32 {
 	return 0
 }
 
-func (x *MacroRevenueEdge) GetAllocatedRevenue() float64 {
+func (x *MacroRevenueEdge) GetRevenue() float64 {
 	if x != nil {
-		return x.AllocatedRevenue
+		return x.Revenue
 	}
 	return 0
 }
@@ -201,12 +201,12 @@ var File_MacroRevenueEdges_proto protoreflect.FileDescriptor
 
 const file_MacroRevenueEdges_proto_rawDesc = "" +
 	"\n" +
-	"\x17MacroRevenueEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\xb1\x03\n" +
+	"\x17MacroRevenueEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\x9e\x03\n" +
 	"\x10MacroRevenueEdge\x12.\n" +
 	"\x13sector_market_share\x18\x01 \x01(\x02R\x11sectorMarketShare\x120\n" +
 	"\x14country_market_share\x18\x02 \x01(\x02R\x12countryMarketShare\x124\n" +
-	"\x16company_revenue_weight\x18\x03 \x01(\x02R\x14companyRevenueWeight\x12+\n" +
-	"\x11allocated_revenue\x18\x04 \x01(\x01R\x10allocatedRevenue\x12\x1a\n" +
+	"\x16company_revenue_weight\x18\x03 \x01(\x02R\x14companyRevenueWeight\x12\x18\n" +
+	"\arevenue\x18\x04 \x01(\x01R\arevenue\x12\x1a\n" +
 	"\bcurrency\x18\x05 \x01(\tR\bcurrency\x12\x14\n" +
 	"\x05scale\x18\x06 \x01(\x03R\x05scale\x12\x1f\n" +
 	"\vsector_code\x18\a \x01(\tR\n" +

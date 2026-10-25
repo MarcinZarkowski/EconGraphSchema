@@ -11,7 +11,7 @@ message MacroRevenueEdge {
     float country_market_share = 2;
     float company_revenue_weight = 3;
 
-    double allocated_revenue = 4;
+    double revenue = 4;
     string currency = 5;
     int64 scale = 6;
 
