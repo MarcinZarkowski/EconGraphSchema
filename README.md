@@ -1,6 +1,7 @@
 # EconGraphSchema
 
 # Generate Go code
+export PATH="$PATH:$HOME/go/bin"                     
 
 protoc \
   --proto_path=proto/v1 \
