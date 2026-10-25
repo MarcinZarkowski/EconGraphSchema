@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "econgraphschema"
+version = "0.1.0"
+description = "Protobuf schema and client bindings for EconGraph"
+dependencies = [
+    "protobuf>=5.0.0",
+]
+
+[tool.setuptools]
+py-modules = [
+    "MacroRevenueEdges_pb2",
+    "SupplyChainEdges_pb2",
+    "SectorNodes_pb2",
+    "CommodityNodes_pb2",
+    "CompanyNodes_pb2",
+    "CountryNodes_pb2",
+]
+
+[tool.setuptools.package-dir]
+"" = "clients/python/v1"
