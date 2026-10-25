@@ -72,8 +72,8 @@ func (SupplyKind) EnumDescriptor() ([]byte, []int) {
 
 type SupplyChainEdge struct {
 	state                    protoimpl.MessageState `protogen:"open.v1"`
-	SupplierRevenueWeight    float64                `protobuf:"fixed64,1,opt,name=supplier_revenue_weight,json=supplierRevenueWeight,proto3" json:"supplier_revenue_weight,omitempty"`
-	SuppliedDependencyWeight float64                `protobuf:"fixed64,2,opt,name=supplied_dependency_weight,json=suppliedDependencyWeight,proto3" json:"supplied_dependency_weight,omitempty"`
+	SupplierRevenueWeight    float32                `protobuf:"fixed32,1,opt,name=supplier_revenue_weight,json=supplierRevenueWeight,proto3" json:"supplier_revenue_weight,omitempty"`
+	SuppliedDependencyWeight float32                `protobuf:"fixed32,2,opt,name=supplied_dependency_weight,json=suppliedDependencyWeight,proto3" json:"supplied_dependency_weight,omitempty"`
 	ToCompanyId              uint32                 `protobuf:"varint,3,opt,name=to_company_id,json=toCompanyId,proto3" json:"to_company_id,omitempty"`
 	FromCountryIso           string                 `protobuf:"bytes,4,opt,name=from_country_iso,json=fromCountryIso,proto3" json:"from_country_iso,omitempty"`
 	SupplyKind               SupplyKind             `protobuf:"varint,5,opt,name=supply_kind,json=supplyKind,proto3,enum=econgraph.v1.SupplyKind" json:"supply_kind,omitempty"`
@@ -114,14 +114,14 @@ func (*SupplyChainEdge) Descriptor() ([]byte, []int) {
 	return file_SupplyChainEdges_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *SupplyChainEdge) GetSupplierRevenueWeight() float64 {
+func (x *SupplyChainEdge) GetSupplierRevenueWeight() float32 {
 	if x != nil {
 		return x.SupplierRevenueWeight
 	}
 	return 0
 }
 
-func (x *SupplyChainEdge) GetSuppliedDependencyWeight() float64 {
+func (x *SupplyChainEdge) GetSuppliedDependencyWeight() float32 {
 	if x != nil {
 		return x.SuppliedDependencyWeight
 	}
@@ -236,8 +236,8 @@ const file_SupplyChainEdges_proto_rawDesc = "" +
 	"\n" +
 	"\x16SupplyChainEdges.proto\x12\fecongraph.v1\"\x89\x03\n" +
 	"\x0fSupplyChainEdge\x126\n" +
-	"\x17supplier_revenue_weight\x18\x01 \x01(\x01R\x15supplierRevenueWeight\x12<\n" +
-	"\x1asupplied_dependency_weight\x18\x02 \x01(\x01R\x18suppliedDependencyWeight\x12\"\n" +
+	"\x17supplier_revenue_weight\x18\x01 \x01(\x02R\x15supplierRevenueWeight\x12<\n" +
+	"\x1asupplied_dependency_weight\x18\x02 \x01(\x02R\x18suppliedDependencyWeight\x12\"\n" +
 	"\rto_company_id\x18\x03 \x01(\rR\vtoCompanyId\x12(\n" +
 	"\x10from_country_iso\x18\x04 \x01(\tR\x0efromCountryIso\x129\n" +
 	"\vsupply_kind\x18\x05 \x01(\x0e2\x18.econgraph.v1.SupplyKindR\n" +

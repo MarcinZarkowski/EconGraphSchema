@@ -5,9 +5,9 @@ package econgraph.v1;
 option go_package = "github.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1";
 
 message MacroRevenueEdge {
-    double sector_market_share = 1;
-    double country_market_share = 2;
-    double company_revenue_weight = 3;
+    float sector_market_share = 1;
+    float country_market_share = 2;
+    float company_revenue_weight = 3;
 
     double allocated_revenue = 4;
     string currency = 5;

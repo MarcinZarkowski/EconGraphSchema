@@ -11,8 +11,8 @@ enum SupplyKind {
 }
 
 message SupplyChainEdge {
-    double supplier_revenue_weight = 1;
-    double supplied_dependency_weight = 2;
+    float supplier_revenue_weight = 1;
+    float supplied_dependency_weight = 2;
 
     uint32 to_company_id = 3;
 

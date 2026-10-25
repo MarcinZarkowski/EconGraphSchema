@@ -23,9 +23,9 @@ const (
 
 type MacroRevenueEdge struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	SectorMarketShare    float64                `protobuf:"fixed64,1,opt,name=sector_market_share,json=sectorMarketShare,proto3" json:"sector_market_share,omitempty"`
-	CountryMarketShare   float64                `protobuf:"fixed64,2,opt,name=country_market_share,json=countryMarketShare,proto3" json:"country_market_share,omitempty"`
-	CompanyRevenueWeight float64                `protobuf:"fixed64,3,opt,name=company_revenue_weight,json=companyRevenueWeight,proto3" json:"company_revenue_weight,omitempty"`
+	SectorMarketShare    float32                `protobuf:"fixed32,1,opt,name=sector_market_share,json=sectorMarketShare,proto3" json:"sector_market_share,omitempty"`
+	CountryMarketShare   float32                `protobuf:"fixed32,2,opt,name=country_market_share,json=countryMarketShare,proto3" json:"country_market_share,omitempty"`
+	CompanyRevenueWeight float32                `protobuf:"fixed32,3,opt,name=company_revenue_weight,json=companyRevenueWeight,proto3" json:"company_revenue_weight,omitempty"`
 	AllocatedRevenue     float64                `protobuf:"fixed64,4,opt,name=allocated_revenue,json=allocatedRevenue,proto3" json:"allocated_revenue,omitempty"`
 	Currency             string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`
 	Scale                int64                  `protobuf:"varint,6,opt,name=scale,proto3" json:"scale,omitempty"`
@@ -66,21 +66,21 @@ func (*MacroRevenueEdge) Descriptor() ([]byte, []int) {
 	return file_MacroRevenueEdges_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *MacroRevenueEdge) GetSectorMarketShare() float64 {
+func (x *MacroRevenueEdge) GetSectorMarketShare() float32 {
 	if x != nil {
 		return x.SectorMarketShare
 	}
 	return 0
 }
 
-func (x *MacroRevenueEdge) GetCountryMarketShare() float64 {
+func (x *MacroRevenueEdge) GetCountryMarketShare() float32 {
 	if x != nil {
 		return x.CountryMarketShare
 	}
 	return 0
 }
 
-func (x *MacroRevenueEdge) GetCompanyRevenueWeight() float64 {
+func (x *MacroRevenueEdge) GetCompanyRevenueWeight() float32 {
 	if x != nil {
 		return x.CompanyRevenueWeight
 	}
@@ -195,9 +195,9 @@ const file_MacroRevenueEdges_proto_rawDesc = "" +
 	"\n" +
 	"\x17MacroRevenueEdges.proto\x12\fecongraph.v1\"\xea\x02\n" +
 	"\x10MacroRevenueEdge\x12.\n" +
-	"\x13sector_market_share\x18\x01 \x01(\x01R\x11sectorMarketShare\x120\n" +
-	"\x14country_market_share\x18\x02 \x01(\x01R\x12countryMarketShare\x124\n" +
-	"\x16company_revenue_weight\x18\x03 \x01(\x01R\x14companyRevenueWeight\x12+\n" +
+	"\x13sector_market_share\x18\x01 \x01(\x02R\x11sectorMarketShare\x120\n" +
+	"\x14country_market_share\x18\x02 \x01(\x02R\x12countryMarketShare\x124\n" +
+	"\x16company_revenue_weight\x18\x03 \x01(\x02R\x14companyRevenueWeight\x12+\n" +
 	"\x11allocated_revenue\x18\x04 \x01(\x01R\x10allocatedRevenue\x12\x1a\n" +
 	"\bcurrency\x18\x05 \x01(\tR\bcurrency\x12\x14\n" +
 	"\x05scale\x18\x06 \x01(\x03R\x05scale\x12\x1f\n" +
