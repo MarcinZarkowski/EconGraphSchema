@@ -16,7 +16,7 @@ message SupplyChainEdge {
     float supplier_revenue_weight = 1;
     float supplied_dependency_weight = 2;
 
-    uint32 to_company_id = 3;
+    string to_company_key = 3;
 
     string from_country_iso = 4;
 
@@ -24,7 +24,7 @@ message SupplyChainEdge {
 
     string commodity_code = 6;
 
-    uint32 from_company_id = 7;
+    string from_company_key = 7;
 
     string from_sector_code = 8;
 

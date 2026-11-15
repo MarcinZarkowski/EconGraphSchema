@@ -23,7 +23,7 @@ const (
 
 type CompanyNode struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	CompanyKey    string                 `protobuf:"bytes,1,opt,name=company_key,json=companyKey,proto3" json:"company_key,omitempty"`
 	Cik           string                 `protobuf:"bytes,2,opt,name=cik,proto3" json:"cik,omitempty"`
 	Ticker        string                 `protobuf:"bytes,3,opt,name=ticker,proto3" json:"ticker,omitempty"`
 	Name          string                 `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty"`
@@ -62,11 +62,11 @@ func (*CompanyNode) Descriptor() ([]byte, []int) {
 	return file_CompanyNodes_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CompanyNode) GetId() uint32 {
+func (x *CompanyNode) GetCompanyKey() string {
 	if x != nil {
-		return x.Id
+		return x.CompanyKey
 	}
-	return 0
+	return ""
 }
 
 func (x *CompanyNode) GetCik() string {
@@ -161,9 +161,10 @@ var File_CompanyNodes_proto protoreflect.FileDescriptor
 
 const file_CompanyNodes_proto_rawDesc = "" +
 	"\n" +
-	"\x12CompanyNodes.proto\x12\fecongraph.v1\"|\n" +
-	"\vCompanyNode\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\rR\x02id\x12\x10\n" +
+	"\x12CompanyNodes.proto\x12\fecongraph.v1\"\x8d\x01\n" +
+	"\vCompanyNode\x12\x1f\n" +
+	"\vcompany_key\x18\x01 \x01(\tR\n" +
+	"companyKey\x12\x10\n" +
 	"\x03cik\x18\x02 \x01(\tR\x03cik\x12\x16\n" +
 	"\x06ticker\x18\x03 \x01(\tR\x06ticker\x12\x12\n" +
 	"\x04name\x18\x04 \x01(\tR\x04name\x12\x1f\n" +

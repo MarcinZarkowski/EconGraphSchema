@@ -11,8 +11,10 @@ class SectorTaxonomy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     ICIO: _ClassVar[SectorTaxonomy]
     BEA: _ClassVar[SectorTaxonomy]
+    CUSTOM: _ClassVar[SectorTaxonomy]
 ICIO: SectorTaxonomy
 BEA: SectorTaxonomy
+CUSTOM: SectorTaxonomy
 
 class SectorNode(_message.Message):
     __slots__ = ("code", "name", "taxonomy", "agency", "description")

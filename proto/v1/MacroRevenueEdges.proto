@@ -18,7 +18,7 @@ message MacroRevenueEdge {
     string sector_code = 7;
     SectorTaxonomy sector_taxonomy = 8;
     string country_iso = 9;
-    uint32 company_id = 10;
+    string company_key = 10;
 }
 
 message MacroRevenueEdgesFile {

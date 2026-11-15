@@ -32,7 +32,7 @@ type MacroRevenueEdge struct {
 	SectorCode           string                 `protobuf:"bytes,7,opt,name=sector_code,json=sectorCode,proto3" json:"sector_code,omitempty"`
 	SectorTaxonomy       SectorTaxonomy         `protobuf:"varint,8,opt,name=sector_taxonomy,json=sectorTaxonomy,proto3,enum=econgraph.v1.SectorTaxonomy" json:"sector_taxonomy,omitempty"`
 	CountryIso           string                 `protobuf:"bytes,9,opt,name=country_iso,json=countryIso,proto3" json:"country_iso,omitempty"`
-	CompanyId            uint32                 `protobuf:"varint,10,opt,name=company_id,json=companyId,proto3" json:"company_id,omitempty"`
+	CompanyKey           string                 `protobuf:"bytes,10,opt,name=company_key,json=companyKey,proto3" json:"company_key,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -130,11 +130,11 @@ func (x *MacroRevenueEdge) GetCountryIso() string {
 	return ""
 }
 
-func (x *MacroRevenueEdge) GetCompanyId() uint32 {
+func (x *MacroRevenueEdge) GetCompanyKey() string {
 	if x != nil {
-		return x.CompanyId
+		return x.CompanyKey
 	}
-	return 0
+	return ""
 }
 
 type MacroRevenueEdgesFile struct {
@@ -201,7 +201,7 @@ var File_MacroRevenueEdges_proto protoreflect.FileDescriptor
 
 const file_MacroRevenueEdges_proto_rawDesc = "" +
 	"\n" +
-	"\x17MacroRevenueEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\x9e\x03\n" +
+	"\x17MacroRevenueEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\xa0\x03\n" +
 	"\x10MacroRevenueEdge\x12.\n" +
 	"\x13sector_market_share\x18\x01 \x01(\x02R\x11sectorMarketShare\x120\n" +
 	"\x14country_market_share\x18\x02 \x01(\x02R\x12countryMarketShare\x124\n" +
@@ -213,10 +213,10 @@ const file_MacroRevenueEdges_proto_rawDesc = "" +
 	"sectorCode\x12E\n" +
 	"\x0fsector_taxonomy\x18\b \x01(\x0e2\x1c.econgraph.v1.SectorTaxonomyR\x0esectorTaxonomy\x12\x1f\n" +
 	"\vcountry_iso\x18\t \x01(\tR\n" +
-	"countryIso\x12\x1d\n" +
-	"\n" +
-	"company_id\x18\n" +
-	" \x01(\rR\tcompanyId\"\x86\x01\n" +
+	"countryIso\x12\x1f\n" +
+	"\vcompany_key\x18\n" +
+	" \x01(\tR\n" +
+	"companyKey\"\x86\x01\n" +
 	"\x15MacroRevenueEdgesFile\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1d\n" +
 	"\n" +

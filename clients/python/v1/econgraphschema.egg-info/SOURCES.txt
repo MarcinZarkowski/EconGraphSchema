@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+clients/python/v1/CommodityNodes_pb2.py
+clients/python/v1/CompanyNodes_pb2.py
+clients/python/v1/CountryNodes_pb2.py
+clients/python/v1/MacroRevenueEdges_pb2.py
+clients/python/v1/SectorNodes_pb2.py
+clients/python/v1/SupplyChainEdges_pb2.py
+clients/python/v1/econgraphschema.egg-info/PKG-INFO
+clients/python/v1/econgraphschema.egg-info/SOURCES.txt
+clients/python/v1/econgraphschema.egg-info/dependency_links.txt
+clients/python/v1/econgraphschema.egg-info/requires.txt
+clients/python/v1/econgraphschema.egg-info/top_level.txt

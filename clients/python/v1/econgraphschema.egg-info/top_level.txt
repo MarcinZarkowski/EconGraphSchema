@@ -1,0 +1,6 @@
+CommodityNodes_pb2
+CompanyNodes_pb2
+CountryNodes_pb2
+MacroRevenueEdges_pb2
+SectorNodes_pb2
+SupplyChainEdges_pb2

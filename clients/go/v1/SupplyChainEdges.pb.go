@@ -74,11 +74,11 @@ type SupplyChainEdge struct {
 	state                    protoimpl.MessageState `protogen:"open.v1"`
 	SupplierRevenueWeight    float32                `protobuf:"fixed32,1,opt,name=supplier_revenue_weight,json=supplierRevenueWeight,proto3" json:"supplier_revenue_weight,omitempty"`
 	SuppliedDependencyWeight float32                `protobuf:"fixed32,2,opt,name=supplied_dependency_weight,json=suppliedDependencyWeight,proto3" json:"supplied_dependency_weight,omitempty"`
-	ToCompanyId              uint32                 `protobuf:"varint,3,opt,name=to_company_id,json=toCompanyId,proto3" json:"to_company_id,omitempty"`
+	ToCompanyKey             string                 `protobuf:"bytes,3,opt,name=to_company_key,json=toCompanyKey,proto3" json:"to_company_key,omitempty"`
 	FromCountryIso           string                 `protobuf:"bytes,4,opt,name=from_country_iso,json=fromCountryIso,proto3" json:"from_country_iso,omitempty"`
 	SupplyKind               SupplyKind             `protobuf:"varint,5,opt,name=supply_kind,json=supplyKind,proto3,enum=econgraph.v1.SupplyKind" json:"supply_kind,omitempty"`
 	CommodityCode            string                 `protobuf:"bytes,6,opt,name=commodity_code,json=commodityCode,proto3" json:"commodity_code,omitempty"`
-	FromCompanyId            uint32                 `protobuf:"varint,7,opt,name=from_company_id,json=fromCompanyId,proto3" json:"from_company_id,omitempty"`
+	FromCompanyKey           string                 `protobuf:"bytes,7,opt,name=from_company_key,json=fromCompanyKey,proto3" json:"from_company_key,omitempty"`
 	FromSectorCode           string                 `protobuf:"bytes,8,opt,name=from_sector_code,json=fromSectorCode,proto3" json:"from_sector_code,omitempty"`
 	FromSectorTaxonomy       SectorTaxonomy         `protobuf:"varint,9,opt,name=from_sector_taxonomy,json=fromSectorTaxonomy,proto3,enum=econgraph.v1.SectorTaxonomy" json:"from_sector_taxonomy,omitempty"`
 	unknownFields            protoimpl.UnknownFields
@@ -129,11 +129,11 @@ func (x *SupplyChainEdge) GetSuppliedDependencyWeight() float32 {
 	return 0
 }
 
-func (x *SupplyChainEdge) GetToCompanyId() uint32 {
+func (x *SupplyChainEdge) GetToCompanyKey() string {
 	if x != nil {
-		return x.ToCompanyId
+		return x.ToCompanyKey
 	}
-	return 0
+	return ""
 }
 
 func (x *SupplyChainEdge) GetFromCountryIso() string {
@@ -157,11 +157,11 @@ func (x *SupplyChainEdge) GetCommodityCode() string {
 	return ""
 }
 
-func (x *SupplyChainEdge) GetFromCompanyId() uint32 {
+func (x *SupplyChainEdge) GetFromCompanyKey() string {
 	if x != nil {
-		return x.FromCompanyId
+		return x.FromCompanyKey
 	}
-	return 0
+	return ""
 }
 
 func (x *SupplyChainEdge) GetFromSectorCode() string {
@@ -242,16 +242,16 @@ var File_SupplyChainEdges_proto protoreflect.FileDescriptor
 
 const file_SupplyChainEdges_proto_rawDesc = "" +
 	"\n" +
-	"\x16SupplyChainEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\xd9\x03\n" +
+	"\x16SupplyChainEdges.proto\x12\fecongraph.v1\x1a\x11SectorNodes.proto\"\xdd\x03\n" +
 	"\x0fSupplyChainEdge\x126\n" +
 	"\x17supplier_revenue_weight\x18\x01 \x01(\x02R\x15supplierRevenueWeight\x12<\n" +
-	"\x1asupplied_dependency_weight\x18\x02 \x01(\x02R\x18suppliedDependencyWeight\x12\"\n" +
-	"\rto_company_id\x18\x03 \x01(\rR\vtoCompanyId\x12(\n" +
+	"\x1asupplied_dependency_weight\x18\x02 \x01(\x02R\x18suppliedDependencyWeight\x12$\n" +
+	"\x0eto_company_key\x18\x03 \x01(\tR\ftoCompanyKey\x12(\n" +
 	"\x10from_country_iso\x18\x04 \x01(\tR\x0efromCountryIso\x129\n" +
 	"\vsupply_kind\x18\x05 \x01(\x0e2\x18.econgraph.v1.SupplyKindR\n" +
 	"supplyKind\x12%\n" +
-	"\x0ecommodity_code\x18\x06 \x01(\tR\rcommodityCode\x12&\n" +
-	"\x0ffrom_company_id\x18\a \x01(\rR\rfromCompanyId\x12(\n" +
+	"\x0ecommodity_code\x18\x06 \x01(\tR\rcommodityCode\x12(\n" +
+	"\x10from_company_key\x18\a \x01(\tR\x0efromCompanyKey\x12(\n" +
 	"\x10from_sector_code\x18\b \x01(\tR\x0efromSectorCode\x12N\n" +
 	"\x14from_sector_taxonomy\x18\t \x01(\x0e2\x1c.econgraph.v1.SectorTaxonomyR\x12fromSectorTaxonomy\"\x84\x01\n" +
 	"\x14SupplyChainEdgesFile\x12\x18\n" +

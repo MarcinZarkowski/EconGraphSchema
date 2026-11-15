@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x43ompanyNodes.proto\x12\x0c\x65\x63ongraph.v1\"Y\n\x0b\x43ompanyNode\x12\n\n\x02id\x18\x01 \x01(\r\x12\x0b\n\x03\x63ik\x18\x02 \x01(\t\x12\x0e\n\x06ticker\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x63ountry_iso\x18\x05 \x01(\t\"a\n\x10\x43ompanyNodesFile\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x12\n\nupdated_at\x18\x02 \x01(\x03\x12(\n\x05nodes\x18\x03 \x03(\x0b\x32\x19.econgraph.v1.CompanyNodeBFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x43ompanyNodes.proto\x12\x0c\x65\x63ongraph.v1\"b\n\x0b\x43ompanyNode\x12\x13\n\x0b\x63ompany_key\x18\x01 \x01(\t\x12\x0b\n\x03\x63ik\x18\x02 \x01(\t\x12\x0e\n\x06ticker\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x63ountry_iso\x18\x05 \x01(\t\"a\n\x10\x43ompanyNodesFile\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x12\n\nupdated_at\x18\x02 \x01(\x03\x12(\n\x05nodes\x18\x03 \x03(\x0b\x32\x19.econgraph.v1.CompanyNodeBFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'ZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1'
   _globals['_COMPANYNODE']._serialized_start=36
-  _globals['_COMPANYNODE']._serialized_end=125
-  _globals['_COMPANYNODESFILE']._serialized_start=127
-  _globals['_COMPANYNODESFILE']._serialized_end=224
+  _globals['_COMPANYNODE']._serialized_end=134
+  _globals['_COMPANYNODESFILE']._serialized_start=136
+  _globals['_COMPANYNODESFILE']._serialized_end=233
 # @@protoc_insertion_point(module_scope)

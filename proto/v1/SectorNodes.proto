@@ -7,6 +7,7 @@ option go_package = "github.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;ec
 enum SectorTaxonomy {
     ICIO = 0;
     BEA = 1;
+    CUSTOM = 2;
 }
 
 // SectorNode represents an industry classification from either BEA or OECD ICIO 

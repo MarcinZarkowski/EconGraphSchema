@@ -24,8 +24,9 @@ const (
 type SectorTaxonomy int32
 
 const (
-	SectorTaxonomy_ICIO SectorTaxonomy = 0
-	SectorTaxonomy_BEA  SectorTaxonomy = 1
+	SectorTaxonomy_ICIO   SectorTaxonomy = 0
+	SectorTaxonomy_BEA    SectorTaxonomy = 1
+	SectorTaxonomy_CUSTOM SectorTaxonomy = 2
 )
 
 // Enum value maps for SectorTaxonomy.
@@ -33,10 +34,12 @@ var (
 	SectorTaxonomy_name = map[int32]string{
 		0: "ICIO",
 		1: "BEA",
+		2: "CUSTOM",
 	}
 	SectorTaxonomy_value = map[string]int32{
-		"ICIO": 0,
-		"BEA":  1,
+		"ICIO":   0,
+		"BEA":    1,
+		"CUSTOM": 2,
 	}
 )
 
@@ -220,10 +223,12 @@ const file_SectorNodes_proto_rawDesc = "" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\x02 \x01(\x03R\tupdatedAt\x12.\n" +
-	"\x05nodes\x18\x03 \x03(\v2\x18.econgraph.v1.SectorNodeR\x05nodes*#\n" +
+	"\x05nodes\x18\x03 \x03(\v2\x18.econgraph.v1.SectorNodeR\x05nodes*/\n" +
 	"\x0eSectorTaxonomy\x12\b\n" +
 	"\x04ICIO\x10\x00\x12\a\n" +
-	"\x03BEA\x10\x01BFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3"
+	"\x03BEA\x10\x01\x12\n" +
+	"\n" +
+	"\x06CUSTOM\x10\x02BFZDgithub.com/MarcinZarkowski/EconGraphSchema/clients/go/v1;econgraphv1b\x06proto3"
 
 var (
 	file_SectorNodes_proto_rawDescOnce sync.Once

@@ -7,18 +7,18 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CompanyNode(_message.Message):
-    __slots__ = ("id", "cik", "ticker", "name", "country_iso")
-    ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("company_key", "cik", "ticker", "name", "country_iso")
+    COMPANY_KEY_FIELD_NUMBER: _ClassVar[int]
     CIK_FIELD_NUMBER: _ClassVar[int]
     TICKER_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     COUNTRY_ISO_FIELD_NUMBER: _ClassVar[int]
-    id: int
+    company_key: str
     cik: str
     ticker: str
     name: str
     country_iso: str
-    def __init__(self, id: _Optional[int] = ..., cik: _Optional[str] = ..., ticker: _Optional[str] = ..., name: _Optional[str] = ..., country_iso: _Optional[str] = ...) -> None: ...
+    def __init__(self, company_key: _Optional[str] = ..., cik: _Optional[str] = ..., ticker: _Optional[str] = ..., name: _Optional[str] = ..., country_iso: _Optional[str] = ...) -> None: ...
 
 class CompanyNodesFile(_message.Message):
     __slots__ = ("version", "updated_at", "nodes")
